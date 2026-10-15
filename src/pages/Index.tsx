@@ -2,9 +2,10 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
-import { Shield, TrendingUp, Users, ArrowRight, Mail, Building2, DollarSign, Megaphone, MapPin, BookOpen, CheckCircle, ChevronDown, Star, FileText, BarChart3 } from "lucide-react";
+import { Shield, TrendingUp, Users, ArrowRight, Mail, Building2, DollarSign, Megaphone, MapPin, BookOpen, CheckCircle, ChevronDown, Star, FileText, BarChart3, Home, ClipboardCheck, Landmark } from "lucide-react";
 import Layout from "@/components/Layout";
 import heroBg from "@/assets/hero-bg.jpg";
+import { VERTICAL_CONFIGS } from "@/data/verticalBusinessConfigs";
 
 // Replace with your Formspree form ID after signing up at formspree.io
 const NEWSLETTER_FORM_ID = "YOUR_NEWSLETTER_FORM_ID";
@@ -20,6 +21,14 @@ const US_STATES = [
 const POPULAR_STATES = ["California","Texas","Florida","New York","Georgia","Arizona","Colorado","Washington"];
 
 const toSlug = (state: string) => state.toLowerCase().replace(/\s+/g, "-");
+
+// Featured states per "start a business" vertical, linking straight to that
+// vertical's state-specific LLC filing fee + licensing page.
+const BUSINESS_VERTICAL_CARDS = [
+  { icon: Home, configKey: "pm-business" as const, featuredStates: ["California","Texas","Florida","New York"] },
+  { icon: ClipboardCheck, configKey: "home-inspection" as const, featuredStates: ["California","Texas","Florida","New York"] },
+  { icon: Landmark, configKey: "mortgage-broker" as const, featuredStates: ["California","Texas","Florida","New York"] },
+];
 
 const faqs = [
   {
@@ -386,6 +395,53 @@ const Index = () => {
                 Browse all 50 state licensing guides →
               </Link>
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* START A BUSINESS BY STATE SECTION */}
+      <section className="section-padding" aria-label="Start a business by state">
+        <div className="container-wide">
+          <div className="mb-10 text-center">
+            <h2 className="font-heading text-3xl font-bold text-foreground md:text-4xl">Start a New Business in Real Estate Services</h2>
+            <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
+              Beyond investing and wholesaling — step-by-step guides to launching a property management company, home inspection business, or mortgage brokerage, including your state's LLC filing fee.
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {BUSINESS_VERTICAL_CARDS.map(({ icon: Icon, configKey, featuredStates }) => {
+              const config = VERTICAL_CONFIGS[configKey];
+              return (
+                <div key={configKey} className="rounded-xl border border-border bg-card p-6 card-hover">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
+                    <Icon className="h-6 w-6 text-accent" />
+                  </div>
+                  <h3 className="mb-2 font-heading text-lg font-bold text-card-foreground">
+                    <Link to={`/${config.urlPrefix}`} className="hover:text-accent transition-colors">
+                      Start a {config.businessLabel}
+                    </Link>
+                  </h3>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{config.heroDescription}</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {featuredStates.map((state) => (
+                      <Link
+                        key={state}
+                        to={`/${config.urlPrefix}/${toSlug(state)}`}
+                        className="rounded-full border border-border bg-background px-3 py-1 text-xs font-medium text-card-foreground hover:border-accent hover:text-accent transition-colors"
+                      >
+                        {state}
+                      </Link>
+                    ))}
+                  </div>
+                  <Link
+                    to={`/${config.urlPrefix}`}
+                    className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:underline"
+                  >
+                    See all states <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
