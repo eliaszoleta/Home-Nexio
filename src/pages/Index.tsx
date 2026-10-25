@@ -147,13 +147,13 @@ const Index = () => {
         <div className="absolute inset-0 opacity-20">
           <img src={heroBg} alt="" className="h-full w-full object-cover" aria-hidden="true" />
         </div>
-        <div className="relative container-wide section-padding py-20 md:py-28 lg:py-36">
-          <div className="max-w-3xl space-y-6">
-            <h1 className="font-heading text-4xl font-bold leading-tight text-primary-foreground md:text-5xl lg:text-6xl">
+        <div className="relative container-wide section-padding py-12 md:py-28 lg:py-36">
+          <div className="max-w-3xl space-y-5 md:space-y-6">
+            <h1 className="font-heading text-3xl font-bold leading-tight text-primary-foreground md:text-5xl lg:text-6xl">
               Real Estate Investing, Wholesaling & Licensing —{" "}
               <span className="text-gradient">Explained Without the Sales Pitch</span>
             </h1>
-            <p className="text-lg leading-relaxed text-primary-foreground/80 md:text-xl">
+            <p className="text-base leading-relaxed text-primary-foreground/80 md:text-xl">
               Free guides on rental property investing, the BRRRR strategy, real estate wholesaling, motivated seller marketing, hard money and DSCR loans, and how to get your real estate license in any state. No courses to buy. No email course funnels. Just the information.
             </p>
             <div className="flex flex-wrap gap-4">
