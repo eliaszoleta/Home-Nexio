@@ -35,9 +35,9 @@ interface BlogCategoryPageProps {
 const CategoryPostCard = ({ post, categoryLabel }: { post: CategoryPost; categoryLabel: string }) => (
   <Link
     to={post.slug}
-    className="card-hover group block rounded-lg border border-border bg-card p-5"
+    className="card-hover blog-card group block"
   >
-    <span className="inline-block rounded-sm bg-accent/10 px-2.5 py-1 text-xs font-semibold text-accent">
+    <span className="inline-block rounded-sm bg-accent/15 px-2.5 py-1 text-xs font-semibold text-accent">
       {categoryLabel}
     </span>
     <h2 className="mt-3 font-heading text-lg font-bold leading-snug text-card-foreground group-hover:text-accent transition-colors">

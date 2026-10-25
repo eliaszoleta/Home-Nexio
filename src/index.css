@@ -126,12 +126,32 @@
     @apply -translate-y-1;
     box-shadow: 0 12px 40px -12px hsl(220 60% 16% / 0.15);
   }
+  /* Blog post cards (Blog.tsx, BlogCategoryPage.tsx) -- `--card` and
+     `--background` are both pure white, so a card styled with plain
+     `bg-card` had zero contrast against the page behind it and a "pile"
+     of them read as one undifferentiated block of white. A tinted
+     background + resting shadow gives each card a visible edge without
+     introducing a new color outside the existing palette. */
+  .blog-card {
+    @apply rounded-lg border border-border bg-muted/50 p-5;
+    box-shadow: 0 1px 3px hsl(220 30% 12% / 0.06);
+  }
 
   /* Blog article prose styles */
   .prose-article {
     font-family: var(--font-body);
-    font-size: 1.0625rem; /* 17px — optimal for long-form reading */
-    line-height: 1.8;
+    /* 17px read fine on desktop but was the same size on a 390px phone,
+       where it forced a handful of words per line and made a short
+       paragraph look like a wall of text. Mobile gets a smaller size and
+       slightly tighter leading; md: restores the original desktop values. */
+    font-size: 0.9375rem; /* 15px */
+    line-height: 1.7;
+  }
+  @media (min-width: 768px) {
+    .prose-article {
+      font-size: 1.0625rem; /* 17px — optimal for long-form reading */
+      line-height: 1.8;
+    }
   }
   .prose-article h1 {
     font-family: var(--font-heading);
@@ -139,13 +159,19 @@
   }
   .prose-article h2 {
     font-family: var(--font-heading);
-    @apply text-2xl font-bold text-foreground mt-12 mb-4 scroll-mt-24;
-    border-bottom: 2px solid hsl(var(--border));
-    padding-bottom: 0.4rem;
+    @apply text-xl font-bold text-foreground mt-12 mb-4 scroll-mt-24 md:text-2xl;
+    /* Was a 2px neutral border in the same washed-out gray as everything
+       else on the page -- bumped to the site's accent color and made
+       thicker so a section break is actually visible scanning the page,
+       not just readable up close. */
+    border-bottom: 3px solid hsl(var(--accent));
+    padding-bottom: 0.5rem;
   }
   .prose-article h3 {
     font-family: var(--font-heading);
-    @apply text-xl font-semibold text-foreground mt-8 mb-3 scroll-mt-24;
+    @apply text-lg font-semibold text-foreground mt-8 mb-3 scroll-mt-24 md:text-xl;
+    border-left: 3px solid hsl(var(--accent) / 0.5);
+    padding-left: 0.75rem;
   }
   .prose-article h4 {
     font-family: var(--font-heading);
