@@ -53,7 +53,7 @@ const StartBusinessHub = ({ configKey }: Props) => {
             <Rocket className="h-4 w-4 text-accent" />
             <span className="text-xs font-bold uppercase tracking-wider text-accent">Starting Your Business</span>
           </div>
-          <h1 className="font-heading text-4xl font-bold text-foreground md:text-5xl">
+          <h1 className="font-heading text-3xl font-bold text-foreground md:text-5xl">
             How to Start a {config.businessLabel}
           </h1>
           <p className="mt-4 text-lg text-muted-foreground leading-relaxed max-w-2xl">

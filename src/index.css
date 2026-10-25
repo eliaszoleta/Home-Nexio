@@ -9,7 +9,13 @@
     --background: 0 0% 100%;
     --foreground: 220 30% 12%;
 
-    --card: 0 0% 100%;
+    /* Was pure white, same as --background -- every bg-card surface
+       sitewide (topic pages, pillar pages, FAQ blocks, state-license
+       cards, blog cards before the earlier fix) had zero contrast
+       against the page behind it. A hairline-subtle tint is enough to
+       make a card read as a card without looking like a different
+       theme. */
+    --card: 220 20% 98%;
     --card-foreground: 220 30% 12%;
 
     --popover: 0 0% 100%;

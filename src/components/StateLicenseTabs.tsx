@@ -126,7 +126,7 @@ const StateLicenseTabs = ({ stateSlug, stateName }: Props) => {
         {/* REQUIREMENTS TAB */}
         <TabsContent value="requirements" className="p-6 md:p-8 mt-0 space-y-6">
           <div>
-            <h3 className="mb-3 font-heading text-lg font-bold text-foreground">Eligibility Requirements</h3>
+            <h3 className="mb-3 border-l-[3px] border-accent/50 pl-3 font-heading text-lg font-bold text-foreground">Eligibility Requirements</h3>
             <ul className="space-y-2 text-muted-foreground">
               {[
                 <>Must be at least <strong className="text-foreground">{data?.minAge || "18"} years old</strong></>,
@@ -165,7 +165,7 @@ const StateLicenseTabs = ({ stateSlug, stateName }: Props) => {
           </div>
 
           <div>
-            <h3 className="mb-3 font-heading text-lg font-bold text-foreground">
+            <h3 className="mb-3 border-l-[3px] border-accent/50 pl-3 font-heading text-lg font-bold text-foreground">
               Step-by-Step: How to Get Licensed in {stateName}
             </h3>
             <ol className="space-y-3 text-muted-foreground">
@@ -224,7 +224,7 @@ const StateLicenseTabs = ({ stateSlug, stateName }: Props) => {
         {/* HOURS & EXAM TAB */}
         <TabsContent value="hours-exam" className="p-6 md:p-8 mt-0 space-y-6">
           <div>
-            <h3 className="mb-3 font-heading text-lg font-bold text-foreground">Pre-Licensing Education</h3>
+            <h3 className="mb-3 border-l-[3px] border-accent/50 pl-3 font-heading text-lg font-bold text-foreground">Pre-Licensing Education</h3>
             <p className="text-muted-foreground leading-relaxed">
               {stateName} requires{" "}
               <strong className="text-foreground">
@@ -252,7 +252,7 @@ const StateLicenseTabs = ({ stateSlug, stateName }: Props) => {
           </div>
 
           <div>
-            <h3 className="mb-3 font-heading text-lg font-bold text-foreground">The Licensing Exam</h3>
+            <h3 className="mb-3 border-l-[3px] border-accent/50 pl-3 font-heading text-lg font-bold text-foreground">The Licensing Exam</h3>
             <p className="text-muted-foreground leading-relaxed">
               The {stateName} real estate exam has two sections: a national portion covering general real
               estate principles, and a {stateName}-specific portion covering state law, regulations, and
@@ -285,7 +285,7 @@ const StateLicenseTabs = ({ stateSlug, stateName }: Props) => {
         {/* COSTS & RENEWAL TAB */}
         <TabsContent value="costs-renewal" className="p-6 md:p-8 mt-0 space-y-6">
           <div>
-            <h3 className="mb-3 font-heading text-lg font-bold text-foreground">Cost Breakdown</h3>
+            <h3 className="mb-3 border-l-[3px] border-accent/50 pl-3 font-heading text-lg font-bold text-foreground">Cost Breakdown</h3>
             <p className="text-muted-foreground">
               Most candidates in {stateName} spend between{" "}
               <strong className="text-foreground">$300 and $900</strong> total, depending on which school
@@ -320,7 +320,7 @@ const StateLicenseTabs = ({ stateSlug, stateName }: Props) => {
           </div>
 
           <div>
-            <h3 className="mb-3 font-heading text-lg font-bold text-foreground">
+            <h3 className="mb-3 border-l-[3px] border-accent/50 pl-3 font-heading text-lg font-bold text-foreground">
               License Renewal in {stateName}
             </h3>
             <p className="text-muted-foreground leading-relaxed">

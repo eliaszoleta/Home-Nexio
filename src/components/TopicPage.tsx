@@ -285,7 +285,7 @@ const TopicPage = ({
             <div className="min-w-0">
 
               {/* Intro */}
-              <p className="text-lg text-muted-foreground leading-relaxed mb-10 max-w-prose">{intro}</p>
+              <p className="text-base text-muted-foreground leading-relaxed mb-10 max-w-prose md:text-lg">{intro}</p>
 
               {/* Sections */}
               <div className="space-y-10">
@@ -293,7 +293,7 @@ const TopicPage = ({
                   <div key={i}>
                     <h2
                       id={toAnchor(s.heading)}
-                      className="font-heading text-2xl font-bold text-foreground mb-3 scroll-mt-24"
+                      className="font-heading text-xl font-bold text-foreground mb-3 scroll-mt-24 border-b-[3px] border-accent pb-2 md:text-2xl"
                     >
                       {s.heading}
                     </h2>

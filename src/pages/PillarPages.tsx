@@ -85,7 +85,7 @@ const PillarPage = ({ title, metaTitle, metaDesc, slug, datePublished, intro, bo
             <Icon className="h-6 w-6 text-accent" />
           </div>
           <div>
-            <h1 className="font-heading text-4xl font-bold text-foreground md:text-5xl">{title}</h1>
+            <h1 className="font-heading text-3xl font-bold text-foreground md:text-5xl">{title}</h1>
           </div>
         </div>
 

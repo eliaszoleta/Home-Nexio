@@ -57,7 +57,7 @@ const StartHere = () => {
 
       <section className="section-padding">
         <div className="container-narrow">
-          <h1 className="font-heading text-4xl font-bold text-foreground md:text-5xl">Start Here</h1>
+          <h1 className="font-heading text-3xl font-bold text-foreground md:text-5xl">Start Here</h1>
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground leading-relaxed">
             Real estate covers a lot of territory. You don't need to understand all of it before you take a step — you just need to figure out which direction makes sense for where you are right now. Pick a path below to start.
           </p>
